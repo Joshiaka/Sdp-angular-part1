@@ -1,0 +1,30 @@
+
+<p *ngIf="doNotMatch">*Studend ID and password do not match.</p>
+
+
+<section>
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <h2 >Login</h2>
+    
+            <div class="form-group">
+                <label>Student ID:</label>
+                <input type="text" formControlName="studentID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentID.errors }" />
+                <div *ngIf="submitted && f.studentID.errors" class="invalid-feedback">
+                    <div *ngIf="f.studentID.errors.required">Student ID is required</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" formControlName="loginPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.loginPassword.errors }" />
+                <div *ngIf="submitted && f.loginPassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.loginPassword.errors.required">Password is required</div>
+                </div>
+            </div>
+            <button (click)="register()">Register now</button>
+            <button class='float-right btn btn-primary' type="submit" >Login</button>
+            
+    </form>
+
+</section>

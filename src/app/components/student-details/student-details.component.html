@@ -1,0 +1,24 @@
+<section class="page-content">
+    <h1>Student Information</h1>
+    <p>Name: <span>{{data.name}}</span></p>
+    <p>ID: <span>{{ data.studentID }}</span></p>
+    <p>Semester: <span>{{data.sem}}</span></p>
+    <p>Department: <span>{{data.department}}</span></p>
+    <p>Attendence: <span>{{data.attendence}}</span></p>
+    <table>
+        <thead>
+            <tr>
+                <td>Semester</td>
+                <td>Percentage</td>
+                <td>Backlogs</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data.marks">
+                <td>{{item.semester}}</td>
+                <td>{{item.percentage}}%</td>
+                <td>{{item.backlogs}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

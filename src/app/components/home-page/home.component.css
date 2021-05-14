@@ -1,0 +1,16 @@
+section {
+    padding: 0 50px;
+    background-color: silver;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

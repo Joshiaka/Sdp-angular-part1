@@ -1,0 +1,21 @@
+section {
+    display: flex;
+    justify-content: left;
+    padding: 150px;
+    background-image: url("../../../assets/contact.png");
+    background-size: 100%;
+}
+form {
+    border: 1px solid black;
+    border-radius: 5px;
+    align-items: center;
+    padding: 70px;
+}
+
+label {
+    padding-right: 20px;
+    width: 300px;
+}
+h2{
+    background-color: silver;
+}

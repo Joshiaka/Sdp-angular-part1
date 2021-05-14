@@ -1,0 +1,29 @@
+
+<h2 *ngIf="formSubmittedSuccessfully">Your Inquiry is submitted successfully</h2>
+<section>
+   
+    <form [formGroup]="inquiryForm" (ngSubmit)="submitInquiry()">
+        <h2>Want to inquire?</h2>
+    
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Enter a valid email address</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Inqriry/Comment:</label>
+                <input type="text" formControlName="inquiry" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.inquiry.errors }" />
+                <div *ngIf="submitted && f.inquiry.errors" class="invalid-feedback">
+                    <div *ngIf="f.inquiry.errors.required">Inqriry/Comment is required</div>
+                </div>
+            </div>
+
+            <button class='float-right btn btn-primary' type="submit" >Submit</button>
+            
+    </form>
+</section>
